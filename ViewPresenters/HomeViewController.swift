@@ -52,6 +52,9 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     @objc func presentModal() {
         let modalViewController = ModalViewController()
+        // without fullscreen presentation style it will present as a card
+        // at top of the current view
+        // just comment the following line and run it to see in action
         modalViewController.modalPresentationStyle = .fullScreen
         present(modalViewController, animated: true, completion: nil)
     }

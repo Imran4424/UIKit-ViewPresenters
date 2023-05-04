@@ -62,6 +62,6 @@ extension HomeViewController {
     
     @objc func presentNav() {
         let secondViewController = SecondViewController()
-        navigationController?.pushViewController(secondViewController, animated: true)
+        navigationController?.pushViewController(secondViewController, animated: false)
     }
 }

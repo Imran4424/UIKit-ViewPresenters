@@ -33,6 +33,7 @@ class HomeViewController: UIViewController {
         modalViewButton.addTarget(self, action: #selector(presentModal), for: .touchUpInside)
         
         seconViewControllerButton = makeButton(withText: "Second View")
+        seconViewControllerButton.addTarget(self, action: #selector(presentNav), for: .touchUpInside)
         
         view.addSubview(modalViewButton)
         view.addSubview(seconViewControllerButton)
@@ -57,5 +58,10 @@ extension HomeViewController {
         // just comment the following line and run it to see in action
         modalViewController.modalPresentationStyle = .fullScreen
         present(modalViewController, animated: true, completion: nil)
+    }
+    
+    @objc func presentNav() {
+        let secondViewController = SecondViewController()
+        navigationController?.pushViewController(secondViewController, animated: true)
     }
 }

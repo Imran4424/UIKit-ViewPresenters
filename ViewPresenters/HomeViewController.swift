@@ -29,7 +29,11 @@ class HomeViewController: UIViewController {
     }
 
     private func setupViews() {
+        modalViewButton = makeButton(withText: "Modal View")
+        seconViewControllerButton = makeButton(withText: "Second View")
         
+        view.addSubview(modalViewButton)
+        view.addSubview(seconViewControllerButton)
     }
     
     private func setupLayouts() {

@@ -8,22 +8,31 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
+    var label = UILabel()
+    var button: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupViews()
+        setupLayouts()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupViews() {
+        label = makeLabel(withText: "Second View Controller")
+        
+        button = makeButton(withText: "Third View")
+        
+        view.addSubview(label)
+        view.addSubview(button)
     }
-    */
-
+    
+    private func setupLayouts() {
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 20)
+        ])
+    }
 }
+

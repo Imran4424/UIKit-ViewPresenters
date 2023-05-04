@@ -30,6 +30,8 @@ class HomeViewController: UIViewController {
 
     private func setupViews() {
         modalViewButton = makeButton(withText: "Modal View")
+        modalViewButton.addTarget(self, action: #selector(presentModal), for: .touchUpInside)
+        
         seconViewControllerButton = makeButton(withText: "Second View")
         
         view.addSubview(modalViewButton)
@@ -37,7 +39,20 @@ class HomeViewController: UIViewController {
     }
     
     private func setupLayouts() {
-        
+        NSLayoutConstraint.activate([
+            modalViewButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            modalViewButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20),
+            seconViewControllerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            seconViewControllerButton.topAnchor.constraint(equalTo: modalViewButton.bottomAnchor, constant: 20)
+        ])
     }
 }
 
+// MARK: - Button actions
+extension HomeViewController {
+    @objc func presentModal() {
+        let modalViewController = ModalViewController()
+        modalViewController.modalPresentationStyle = .fullScreen
+        present(modalViewController, animated: true, completion: nil)
+    }
+}

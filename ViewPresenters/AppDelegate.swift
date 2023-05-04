@@ -15,7 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
-        window?.rootViewController = ViewController()
+        
+        let rootViewController = ViewController(navBarTitle: "ViewPresenters")
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+        
+        window?.rootViewController = navigationController
         
         return true
     }

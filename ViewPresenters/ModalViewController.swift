@@ -19,6 +19,8 @@ class ModalViewController: UIViewController {
     func setupViews() {
         view.backgroundColor = .white
         label = makeLabel(withText: "Modal ViewController")
+        
+        view.addSubview(label)
     }
     
     func setupLayouts() {

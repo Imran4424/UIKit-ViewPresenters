@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  ViewPresenters
 //
 //  Created by Shah Md Imran Hossain on 4/5/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     var navBarTitle: String
     
     init(navBarTitle: String) {

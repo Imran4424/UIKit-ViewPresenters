@@ -21,6 +21,7 @@ class SecondViewController: UIViewController {
         label = makeLabel(withText: "Second View Controller")
         
         button = makeButton(withText: "Third View")
+        button.addTarget(self, action: #selector(presentNav), for: .touchUpInside)
         
         view.addSubview(label)
         view.addSubview(button)
@@ -36,3 +37,10 @@ class SecondViewController: UIViewController {
     }
 }
 
+// MARK: - Button Actions
+extension SecondViewController {
+    @objc func presentNav() {
+        let thirdViewController = ThirdViewController()
+        navigationController?.pushViewController(thirdViewController, animated: false)
+    }
+}

@@ -44,3 +44,22 @@ func makeButton(withText text: String) -> UIButton {
     button.configuration = config
     return button
 }
+
+func makeStackView(withOrientation axis: NSLayoutConstraint.Axis) -> UIStackView {
+    let stackView = UIStackView()
+    stackView.translatesAutoresizingMaskIntoConstraints = false
+    stackView.axis = axis
+    stackView.distribution = .fill
+    stackView.alignment = .fill
+    stackView.spacing = 8.0
+
+    return stackView
+}
+
+func makeView(color: UIColor = .red) -> UIView {
+    let view = UIView()
+    view.translatesAutoresizingMaskIntoConstraints = false
+    view.backgroundColor = color
+
+    return view
+}

@@ -9,6 +9,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     var navBarTitle: String
+    var modalViewButton: UIButton!
+    var seconViewControllerButton: UIButton!
     
     init(navBarTitle: String) {
         self.navBarTitle = navBarTitle
@@ -22,9 +24,16 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setupViews()
+        setupLayouts()
     }
 
-
+    private func setupViews() {
+        
+    }
+    
+    private func setupLayouts() {
+        
+    }
 }
 

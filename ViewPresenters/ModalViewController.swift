@@ -8,6 +8,7 @@
 import UIKit
 
 class ModalViewController: UIViewController {
+    var label = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,10 +18,13 @@ class ModalViewController: UIViewController {
     
     func setupViews() {
         view.backgroundColor = .white
-        let label = makeLabel(withText: "Modal ViewController")
+        label = makeLabel(withText: "Modal ViewController")
     }
     
     func setupLayouts() {
-        
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
 }

@@ -7,6 +7,31 @@
 
 import UIKit
 
+func makeLabel(withText text: String) -> UILabel {
+    let label = UILabel()
+    label.translatesAutoresizingMaskIntoConstraints = false // important!
+    label.backgroundColor = .yellow
+    label.textAlignment = .center
+    label.numberOfLines = 0
+    label.text = text
+
+    return label
+}
+
+func makeLabel(withText text: String, size: CGFloat) -> UILabel {
+    let label = makeLabel(withText: text)
+    label.font = UIFont.systemFont(ofSize: size)
+
+    return label
+}
+
+func makeLabel(withText text: String, size: CGFloat, color: UIColor) -> UILabel {
+    let label = makeLabel(withText: text, size: size)
+    label.backgroundColor = color
+    
+    return label
+}
+
 func makeButton(withText text: String) -> UIButton {
     let button = UIButton(type: .system)
     button.translatesAutoresizingMaskIntoConstraints = false
